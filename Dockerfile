@@ -11,4 +11,10 @@ RUN apt-get update && \
     apt-get autoremove -y && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
+
+
 WORKDIR /
+ADD start_website.sh /start_website.sh
+RUN chmod 755 /start_website.sh
+CMD [ "/start_website.sh" ]
+EXPOSE 8080 8443
