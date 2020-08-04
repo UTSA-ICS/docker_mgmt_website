@@ -7,7 +7,7 @@ ENV USER root
 # build depends
 RUN apt-get update && \
     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
-        ipmitool nodejs && \
+        ipmitool nodejs git && \
     apt-get autoremove -y && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
